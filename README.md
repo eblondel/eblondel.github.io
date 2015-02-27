@@ -1,4 +1,0 @@
-eblondel.github.io
-==================
-
-Blog
