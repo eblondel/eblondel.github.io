@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /**
  * Main app
  */
@@ -77,3 +78,6 @@ angular.module("MyWebsite").controller('FooterCtrl',
 			
 		}]);
 		
+=======
+
+>>>>>>> babcb6e29b6845277915d5013f6725832be4b5d1
