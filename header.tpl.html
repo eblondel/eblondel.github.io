@@ -1,0 +1,42 @@
+<nav class="navbar navbar-default">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<a class="navbar-brand" href="" ng-click="goTo('home')">{{'HOME' | translate}}</a>
+		</div>
+
+		<div class="collapse navbar-collapse"
+			id="bs-example-navbar-collapse-1">
+			
+			<!-- 
+			<ul class="nav navbar-nav">
+				<li><a href="" ng-click="goTo('services')">{{'SERVICES' | translate}}</a></li>
+				<li><a href="" ng-click="goTo('portfolio')">Portfolio</a></li>
+				<li><a href="" ng-click="goTo('r')">R</a></li>
+				<li><a href="" ng-click="goTo('cv')">Curriculum</a></li>
+				<li><a href="" ng-click="goTo('about')">{{'ABOUT' | translate}}</a></li>
+				<li><a href="" ng-click="goTo('contact')">{{'CONTACT' | translate}}</a></li>
+			</ul> -->
+
+			<ul class="nav navbar-nav navbar-right">
+				
+				<li class="dropdown"><a class="dropdown-toggle"
+					data-toggle="dropdown" role="button" , aria-expanded="false">{{'LANG'
+						| translate}} <span class="caret"></span>
+				</a>
+					<ul class="dropdown-menu" role="menu">
+
+						<li><a ng-click="changeLanguage('en')"><img class="flag" 
+								src="assets/flags/en.png">English</a></li>
+						<li><a ng-click="changeLanguage('fr')"><img class="flag" 
+								src="assets/flags/fr.png">Français</a></li>
+						<li><a ng-click="changeLanguage('es')"><img class="flag" 
+								src="assets/flags/es.png">Español</a></li>
+					</ul>
+				</li>
+				<li><a href="#"><img alt="flag" src="assets/flags/{{language}}.png"></a></li>
+			</ul>
+
+
+
+		</div>
+</nav>

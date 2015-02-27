@@ -1,29 +1,41 @@
 <!DOCTYPE html>
-<html>
-	<head>
-		<title>Emmanuel Blondel</title>
-		<!-- link to main stylesheet -->
-		<link rel="stylesheet" type="text/css" href="/css/main.css">
-	</head>
-	<body>
-		<nav>
-    		<ul>
-        		<li><a href="/">Home</a></li>
-	        	<li><a href="/about">About</a></li>
-        		<li><a href="/cv">CV</a></li>
-    		</ul>
-		</nav>
-		<div class="container">
-    		<div class="blurb">
-        		<h1>Emmanuel Blondel</h1>
-			      <h2>International Consultant - Fishery & Marine Information Systems</h2>
-    		</div><!-- /.blurb -->
-		</div><!-- /.container -->
-		<footer>
-    		<ul>
-        		<li><a href="mailto:emmanuel.blondel1@gmail.com">email</a></li>
-        		<li><a href="https://github.com/eblondel">github.com/eblondel</a></li>
-			</ul>
-		</footer>
-	</body>
+<html lang="en" ng-app="MyWebsite">
+<head>
+
+<title>Emmanuel Blondel</title>
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="scripts/vendor/bootstrap/css/bootstrap.min.css">
+
+<!-- Javascript dependencies -->
+<script type="text/javascript" src="scripts/vendor/jquery/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="scripts/vendor/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="scripts/vendor/angularjs/angular.js"></script>
+<script type="text/javascript" src="scripts/vendor/angularjs/angular-route.js"></script>
+<script type="text/javascript" src="scripts/vendor/angularjs/angular-translate.js"></script>
+<script type="text/javascript" src="scripts/vendor/angularjs/angular-translate-loader-partial.js"></script>
+
+<!-- Application -->
+<link rel="stylesheet" href="css/mainstyles.css">
+
+<script type="text/javascript" src="app/app.js"></script>
+<script type="text/javascript" src="app/modules/home/home.js"></script>
+<script type="text/javascript" src="app/modules/services/services.js"></script>
+<script type="text/javascript" src="app/modules/R/rpackages.js"></script>
+
+</head>
+
+<body ng-controller="MainCtrl" class="container">
+
+	<div ng-include="'header.tpl.html'"></div>
+
+	<div ng-view class="container"></div>
+	
+	<div ng-include="'footer.tpl.html'"></div>
+	
+</body>
+
 </html>

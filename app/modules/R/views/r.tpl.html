@@ -1,0 +1,39 @@
+<div class="media-left">
+	<a href="#"> <img class="media-object" src="assets/Rlogo.jpg"
+		alt="rlogo">
+	</a>
+</div>
+<div class="media-body">
+	<h3 class="media-heading">
+		<div class="page-header">R developments</div>
+	</h3>
+
+
+	<p>
+		This page highlights the <a href="http://www.r-project.org">R</a>
+		projects &amp; initiatives i have launched, and for which i am
+		providing development, maintenance and support services.
+	</p>
+
+</div>
+
+<ul>
+	<div ng-repeat="package in packages"
+		ng-class="{'new-row': startNewRow($index, 2) }">
+		<div class="thumbnail rpackage col-md-5">
+			<div class="caption">
+				<div class="page-header">
+					<h3>
+						{{package.name}} <small>{{package.title}}</small>
+					</h3>
+				</div>
+				<p>{{package.description}}</p>
+				<p>
+					<a href="{{package.url}}" class="btn btn-primary" role="button" target="_blank">Project</a>
+					<a ng-show="{{package.oncran}}" href="{{package.cran}}" class="btn btn-default" role="button" target="_blank">CRAN</a>
+				</p>
+			</div>
+		</div>
+
+	</div>
+</ul>
