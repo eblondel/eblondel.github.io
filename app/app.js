@@ -112,4 +112,3 @@ angular.module("MyWebsite").controller('FooterCtrl',
 			$scope.year = new Date();
 			
 		}]);
-		
