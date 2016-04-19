@@ -1,0 +1,27 @@
+<div class="content">
+
+	<!-- List all references -->
+	<h3><b translate="REFERENCES"></b></h3>
+	<hr class="header-line">
+
+	<ul>
+		<li ng-repeat="reference in references">
+			{{reference.dateStart|date:'MM/yyyy'}} - {{reference.dateEnd|date:'MM/yyyy'}} — {{'CLIENTS'| translate:"{PLUR: 'false'}"}}: <a ng-href="reference.clientUrl" target="_blank"><b>{{reference.client}}</b></a>
+			<span ng-if="reference.subcontractor" translate="SUBCONTRACT"></span> <span ng-if="reference.subcontractor"><a ng-href="reference.subcontractorUrl" target="_blank">{{reference.subcontractor}})</a></span><br>
+			<p translate="{{reference.id}}"></p>
+		</li>
+	</ul>
+
+	<br>
+
+	<!-- Display clients logos -->
+	<h3><b>{{'CLIENTS'| translate:"{PLUR: 'true'}"}}</b> & <b>{{'COLLABORATORS'| translate:"{PLUR: 'true'}"}}</b></h3>
+	<hr class="header-line">
+
+	<ul>
+		<li ng-repeat="client in clients" style="display:inline">
+			<a href="{{client.url}}" class="client" target="_blank"><img ng-src="assets/clients/{{client.id}}.png" alt="{{client.id}}" title="{{client.name}}" height="40"/></a>
+		</li>
+	</ul>
+	
+</div>

@@ -1,0 +1,9 @@
+{
+	"CLIENTS": "Client{PLUR, select, false{} true{s} other{}}",
+	"COLLABORATORS": "Collaborateur{PLUR, select, false{} true{s} other{}}",
+	"SUBCONTRACT": "(sous-traitance avec",
+	"REF_FAO_PSA_FIP": "Expertises SIG, gestion de données, développement d'outils et production de cartes dans plusieurs projets: FIGIS, Projets EU (D4-Science, iMarine), Base de données Ecosystèmes Marins Vulnérables (VME-db), Portail de données SmartFish Chimaera et FIRMS",
+	"REF_FAO_PSA_ESS": "Développement d'un outil SIG avec le logiciel R pour produire des cartes thématiques pour les livres statistiques de la FAO (utilisé à partir de l'édition 2012). L'outil est exploité dans un outil de rapportage basé sur la plateforme LaTeX. Voir <a href=\"http://www.fao.org/economic/ess/ess-publications/ess-yearbook/en\" target=\"_blank\">http://www.fao.org/economic/ess/ess-publications/ess-yearbook/en</a>",
+	"REF_UMANIS_S3E": "Intégration d'indicateurs côtiers pour la directive Cadre Eau (DCE) dans le Système d'Information SEEE: Expertise R (Conception technique et Implémentation). Audit du système d'information SEEE existant et recommandations pour son exploitation avec les données côtières et indicateurs résultants",
+	"REF_UMANIS_R": "Expertise R pour le service Ifremer Dyneco/Vigies: Optimisation de codes, Automatisation et standardisation de traitements incluant des analyses statistiques tels que les Modèles Dynamiques Linéaires"
+}

@@ -1,2 +1,17 @@
-<h3>Services</h3>
-<h3>References</h3>
+<!-- List all services -->
+<div class="content">
+
+	<h3><b translate="SERVICES"></b></h3>
+	<hr class="header-line">
+
+	<ul>
+		<li ng-repeat="service in services">
+			<b translate="{{service.category}}"></b>
+			<ul>
+				<li ng-repeat="item in service.items" translate="{{item}}"></li>
+			<ul>
+			<br>
+		</li>
+	</ul>
+	
+</div>

@@ -1,35 +1,33 @@
-<nav class="navbar navbar-default">
+<nav class="navbar navbar-default header">
 	<div class="container-fluid">
 		<div class="navbar-header">
-			<a class="navbar-brand" href="" ng-click="goTo('home')">{{'HOME' | translate}}</a>
+			<a class="navbar-brand" href="" ng-click="goTo('home')"><span class="glyphicon glyphicon-home"></span></a>
 		</div>
 
 		<div class="collapse navbar-collapse"
 			id="bs-example-navbar-collapse-1">
 			
-			<!-- 
+			 
 			<ul class="nav navbar-nav">
-				<li><a href="" ng-click="goTo('services')">{{'SERVICES' | translate}}</a></li>
-				<li><a href="" ng-click="goTo('portfolio')">Portfolio</a></li>
-				<li><a href="" ng-click="goTo('r')">R</a></li>
-				<li><a href="" ng-click="goTo('cv')">Curriculum</a></li>
-				<li><a href="" ng-click="goTo('about')">{{'ABOUT' | translate}}</a></li>
-				<li><a href="" ng-click="goTo('contact')">{{'CONTACT' | translate}}</a></li>
-			</ul> -->
+				<li><a href="" ng-click="goTo('services')" translate="SERVICES"></a></li>
+				<li><a href="" ng-click="goTo('references')" translate="REFERENCES"></a></li>
+				<li><a href="" ng-click="goTo('about')" translate="ABOUT"></a></li>
+				<li><a href="" ng-click="goTo('contact')" translate="CONTACT"></a></li>
+			</ul>
 
 			<ul class="nav navbar-nav navbar-right">
 				
-				<li class="dropdown"><a class="dropdown-toggle"
+				<li class="dropdown"><a class="dropdown-toggle language-selector"
 					data-toggle="dropdown" role="button" , aria-expanded="false">{{'LANG'
 						| translate}} <span class="caret"></span>
 				</a>
 					<ul class="dropdown-menu" role="menu">
 
-						<li><a ng-click="changeLanguage('en')"><img class="flag" 
-								src="assets/flags/en.png">English</a></li>
-						<li><a ng-click="changeLanguage('fr')"><img class="flag" 
+						<li><a ng-click="changeLanguage('en')" class="language-selector"><img class="flag" 
+								src="assets/flags/en.png" >English</a></li>
+						<li><a ng-click="changeLanguage('fr')" class="language-selector"><img class="flag" 
 								src="assets/flags/fr.png">Français</a></li>
-						<li><a ng-click="changeLanguage('es')"><img class="flag" 
+						<li><a ng-click="changeLanguage('es')" class="language-selector"><img class="flag" 
 								src="assets/flags/es.png">Español</a></li>
 					</ul>
 				</li>

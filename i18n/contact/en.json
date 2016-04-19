@@ -1,0 +1,10 @@
+{
+	"CONTACT_TITLE": "Contact me",
+	"CONTACT_ADDRESS": "Postal address",
+	"CONTACT_PHONE": "Phone number",
+	"CONTACT_EMAIL": "Email",
+	"CONTACT_COMPANY_TITLE": "Company details",
+	"CONTACT_COMPANY_STATUS": "Individual company (with own name)",
+	"CONTACT_COMPANY_TVA": "VAT not applicable, Article 293 B of the CGI",
+	"CONTACT_COMPANY_REGISTRIES": "Exempted of registration to the trade and companies registry (RCS) and the registration business directory (RM)"
+}

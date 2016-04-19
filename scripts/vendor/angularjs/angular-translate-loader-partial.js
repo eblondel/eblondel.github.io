@@ -1,3 +1,24 @@
+/*!
+ * angular-translate - v2.10.0 - 2016-02-28
+ * 
+ * Copyright (c) 2016 The angular-translate team, Pascal Precht; Licensed MIT
+ */
+(function (root, factory) {
+  if (typeof define === 'function' && define.amd) {
+    // AMD. Register as an anonymous module unless amdModuleId is set
+    define([], function () {
+      return (factory());
+    });
+  } else if (typeof exports === 'object') {
+    // Node. Does not work with strict CommonJS, but
+    // only CommonJS-like environments that support module.exports,
+    // like Node.
+    module.exports = factory();
+  } else {
+    factory();
+  }
+}(this, function () {
+
 angular.module('pascalprecht.translate')
 /**
  * @ngdoc object
@@ -9,7 +30,11 @@ angular.module('pascalprecht.translate')
  * lifetime. All parts you add by using this provider would be loaded by
  * angular-translate at the startup as soon as possible.
  */
-.provider('$translatePartialLoader', function() {
+  .provider('$translatePartialLoader', $translatePartialLoader);
+
+function $translatePartialLoader() {
+
+  'use strict';
 
   /**
    * @constructor
@@ -33,43 +58,48 @@ angular.module('pascalprecht.translate')
    * Returns a parsed url template string and replaces given target lang
    * and part name it.
    *
-   * @param {string} urlTemplate Url pattern to use.
-   * @param {string} targetLang Language key for language to be used.
+   * @param {string|function} urlTemplate - Either a string containing an url pattern (with
+   *                                        '{part}' and '{lang}') or a function(part, lang)
+   *                                        returning a string.
+   * @param {string} targetLang - Language key for language to be used.
    * @return {string} Parsed url template string
    */
   Part.prototype.parseUrl = function(urlTemplate, targetLang) {
+    if (angular.isFunction(urlTemplate)) {
+      return urlTemplate(this.name, targetLang);
+    }
     return urlTemplate.replace(/\{part\}/g, this.name).replace(/\{lang\}/g, targetLang);
   };
 
   Part.prototype.getTable = function(lang, $q, $http, $httpOptions, urlTemplate, errorHandler) {
-    var deferred = $q.defer();
 
     if (!this.tables[lang]) {
       var self = this;
 
-      $http(angular.extend({
+      return $http(angular.extend({
         method : 'GET',
         url: this.parseUrl(urlTemplate, lang)
-      }, $httpOptions)).success(function(data){
-        self.tables[lang] = data;
-        deferred.resolve(data);
-      }).error(function() {
-        if (errorHandler) {
-          errorHandler(self.name, lang).then(function(data) {
-            self.tables[lang] = data;
-            deferred.resolve(data);
-          }, function() {
-            deferred.reject(self.name);
-          });
-        } else {
-          deferred.reject(self.name);
-        }
-      });
+      }, $httpOptions))
+        .then(function(result){
+          self.tables[lang] = result.data;
+          return result.data;
+        }, function() {
+          if (errorHandler) {
+            return errorHandler(self.name, lang)
+              .then(function(data) {
+                self.tables[lang] = data;
+                return data;
+              }, function() {
+                return $q.reject(self.name);
+              });
+          } else {
+            return $q.reject(self.name);
+          }
+        });
 
     } else {
-      deferred.resolve(this.tables[lang]);
+      return $q.when(this.tables[lang]);
     }
-    return deferred.promise;
   };
 
   var parts = {};
@@ -166,7 +196,7 @@ angular.module('pascalprecht.translate')
    * of the wrong type. Please, note that the `lang` and `part` params have to be a
    * non-empty **string**s and the `table` param has to be an object.
    */
-  this.setPart = function(lang, part, table) {
+  this.setPart = function (lang, part, table) {
     if (!isStringValid(lang)) {
       throw new TypeError('Couldn\'t set part.`lang` parameter has to be a string!');
     }
@@ -202,7 +232,7 @@ angular.module('pascalprecht.translate')
    * @throws {TypeError} The method could throw a **TypeError** if you pass the param of the wrong
    * type. Please, note that the `name` param has to be a non-empty **string**.
    */
-  this.deletePart = function(name) {
+  this.deletePart = function (name) {
     if (!isStringValid(name)) {
       throw new TypeError('Couldn\'t delete part, first arg has to be string.');
     }
@@ -272,42 +302,40 @@ angular.module('pascalprecht.translate')
         throw new TypeError('Unable to load data, a key is not a non-empty string.');
       }
 
-      if (!isStringValid(options.urlTemplate)) {
-        throw new TypeError('Unable to load data, a urlTemplate is not a non-empty string.');
+      if (!isStringValid(options.urlTemplate) && !angular.isFunction(options.urlTemplate)) {
+        throw new TypeError('Unable to load data, a urlTemplate is not a non-empty string or not a function.');
       }
 
       var errorHandler = options.loadFailureHandler;
       if (errorHandler !== undefined) {
         if (!angular.isString(errorHandler)) {
           throw new Error('Unable to load data, a loadFailureHandler is not a string.');
-        } else errorHandler = $injector.get(errorHandler);
+        } else {
+          errorHandler = $injector.get(errorHandler);
+        }
       }
 
       var loaders = [],
-          deferred = $q.defer(),
           prioritizedParts = getPrioritizedParts();
 
-      angular.forEach(prioritizedParts, function(part, index) {
+      angular.forEach(prioritizedParts, function(part) {
         loaders.push(
           part.getTable(options.key, $q, $http, options.$http, options.urlTemplate, errorHandler)
         );
         part.urlTemplate = options.urlTemplate;
       });
 
-      $q.all(loaders).then(
-        function() {
+      return $q.all(loaders)
+        .then(function() {
           var table = {};
+          prioritizedParts = getPrioritizedParts();
           angular.forEach(prioritizedParts, function(part) {
             deepExtend(table, part.tables[options.key]);
           });
-          deferred.resolve(table);
-        },
-        function() {
-          deferred.reject(options.key);
-        }
-      );
-
-      return deferred.promise;
+          return table;
+        }, function() {
+          return $q.reject(options.key);
+        });
     };
 
     /**
@@ -483,4 +511,9 @@ angular.module('pascalprecht.translate')
 
   }];
 
-});
+}
+
+$translatePartialLoader.displayName = '$translatePartialLoader';
+return 'pascalprecht.translate';
+
+}));

@@ -1,0 +1,9 @@
+{
+	"CLIENTS": "Client{PLUR, select, false{} true{s} other{}}",
+	"COLLABORATORS": "Collaborator{PLUR, select, false{} true{s} other{}}",
+	"SUBCONTRACT": "(subcontracting with",
+	"REF_FAO_PSA_FIP": "GIS expertises, data management, tools development & map production in several projects: FIGIS, EU projects (D4Science, iMarine), Vulnerable Marine Ecosystems (VME) database, SmartFish Chimaera portal and FIRMS",
+	"REF_FAO_PSA_ESS": "Development of a GIS tool with the R software to produce thematic statistical maps for the FAO Statistical yearbooks (starting from the 2012 edition). The software is exploited at report generation time using LaTeX tools. See <a href=\"http://www.fao.org/economic/ess/ess-publications/ess-yearbook/en\" target=\"_blank\">http://www.fao.org/economic/ess/ess-publications/ess-yearbook/en</a> ",
+	"REF_UMANIS_S3E": "Integrating coastal indicators for the EC Water Framework Directive in the SEEE information system​: R expertise (Technical conception & implementation). Audit of the existing SEEE information system & recommendations for its exploitation with coastal data & resulting indicators",
+	"REF_UMANIS_R": "R expertise for the Ifremer Dyneco/Vigies service: Optimization of codes, Automation & Standardization of processings including statistical analyses such as Dynamic Linear Models"
+}

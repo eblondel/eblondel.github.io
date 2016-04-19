@@ -1,0 +1,10 @@
+{
+	"CONTACT_TITLE": "Contactarme",
+	"CONTACT_ADDRESS": "Dirección",
+	"CONTACT_PHONE": "Número de Teléfono",
+	"CONTACT_EMAIL": "Correo electrónico",
+	"CONTACT_COMPANY_TITLE": "Detalles de empresa",
+	"CONTACT_COMPANY_STATUS": "Empresa individual (en nombre propio)",
+	"CONTACT_COMPANY_TVA": "IVA no aplicable, artículo 293 B del Código de Impuestos Francés",
+	"CONTACT_COMPANY_REGISTRIES": "Exención de inscripción en el registro mercantil o de sociedades (RCS) y el directorio de negocios (RM)"
+}

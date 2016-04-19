@@ -1,16 +1,8 @@
 
-/* Header styles
---------------------------------------------------*/
-
-
-.flag {
-	padding:6px;
-}
-
-
-
-/* Sticky footer styles
+/* Custom page CSS
 -------------------------------------------------- */
+/* Not required for template or sticky footer method. */
+
 html {
   position: relative;
   min-height: 100%;
@@ -19,33 +11,108 @@ body {
   /* Margin bottom by footer height */
   margin-bottom: 60px;
 }
+
+.container {
+	padding-left:0px;
+	padding-right:0px;
+}
+
+body > .container {
+  height: 90%;
+  position: absolute;
+  border: 1px solid #ccc;
+}
+.container .text-muted {
+  margin: 10px 0;
+}
+
+.content {
+	padding: 5px 20px;
+}
+
+.carousel{
+	height:inherit;
+}
+
+/* Header styles
+--------------------------------------------------*/
+
+
+.header{
+	background-color: #0d6cac;
+	-webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    -o-border-radius: 0px;
+    border-radius: 0px;
+	border:none;
+	border-bottom:1px solid #bbb;
+	color:white;
+}
+
+.navbar {
+	margin-bottom: 0px;
+}
+
+.header .navbar-brand {
+ color:white;
+}
+
+.header .navbar-brand:hover {
+ color:lightblue;
+}
+
+.header  .navbar-nav > li > a {
+    color: white;
+}
+
+.header  .navbar-nav > li > a:hover{
+	color:lightblue;
+}
+
+.header  .navbar-nav > li > a:focus{
+	color:lightblue;
+	font-weight:bold;
+}
+
+.flag {
+	padding:6px;
+}
+
+.language-selector {
+	cursor:default;
+}
+
+.language-selector:hover{
+	font-weight:normal !important; 
+}
+
+
+/* Sticky footer styles
+-------------------------------------------------- */
+
 .footer {
   position: absolute;
   bottom: 0;
   /* Set the fixed height of the footer here */
-  height: 60px;
+  height: 70px;
   background-color: #f5f5f5;
 }
 
+a.social-profile{
+	padding-right:5x;
+	text-decoration:none;
+}
 
-/* Custom page CSS
+a.social-profile:hover{
+	text-decoration:none;
+}
+
+/* References
 -------------------------------------------------- */
-/* Not required for template or sticky footer method. */
 
-body > .container {
-  padding: 60px 15px 0;
+a.client{
+	float:left;
+	display:inline-block;
+	margin-right:40px;
 }
-.container .text-muted {
-  margin: 20px 0;
-}
-
-
-/*
-----------------------------------------------------*/
-
-.rpackage {
-	margin: 10px;
-	height: 250px
-}
-
 

@@ -1,5 +1,12 @@
 <footer class="footer" ng-controller="FooterCtrl">
 	<div class="container">
-		<p class="text-muted text-center">&copy; Emmanuel Blondel, {{year | date:'yyyy'}} - <strong translate="WORK_DOMAIN"></strong></p>
+		<p class="text-muted text-center">
+			&copy; Emmanuel Blondel, 2010 - {{year | date:'yyyy'}} <strong translate="WORK_DOMAIN"></strong><br>
+			<a href="" ng-click="goTo('contact')" title="Email"><span class="glyphicon glyphicon-envelope"></span> {{'CONTACT_TITLE'|translate}}</a> — 
+			<span translate="FOLLOW_ME"></span>
+			<a ng-href="https://{{linkedinLanguage}}.linkedin.com/in/emmanuelblondel1" target="_blank" class="social-profile"><img src="assets/profiles/linkedin.png" alt="linkedin" title="LinkedIn" height="28" width="28" /> </a>
+			<a ng-href="http://www.viadeo.com/{{viadeoLanguage}}/profile/emmanuel.blondel5" target="_blank" class="social-profile"><img src="assets/profiles/viadeo.png" alt="viadeo" title="Viadeo" height="28" width="28" /> </a>
+			<a href="https://github.com/eblondel" target="_blank" class="social-profile"><img src="assets/profiles/github.png" alt="github" title="Github" height="28" width="28" /> </a>
+		</p>
 	</div>
 </footer>

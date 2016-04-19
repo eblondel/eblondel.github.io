@@ -1,6 +1,7 @@
 {
 	"WORK_DOMAIN": "Information Systems in Agronomy, Environment, Fishery & Marine Sciences",
 	"WORK_BACKGROUND": "Graduated Engineer in Agronomic Sciences from the <a href='http://www.ensat.fr/en/index.html' target='_blank'>French National Polytechnical Institute (INP-ENSAT)</a>, with a Master degree  in Environment & Natural Resources management, i developed my work experience building <strong> Geographic Information Systems</strong> applied to Agronomy, Environment, Fisheries & Marine Sciences.",
-	"WORK_CURRENT":  "I am currently working as <strong>Consultant in Information Systems</strong> in these fields of application, and acting as <strong>International Consultant</strong> for the FAO of the United Nations - <a href='http://www.fao.org/fishery/en' target='_blank'>Fisheries and Aquaculture Department</a>.",
+	"WORK_CURRENT_COMPANY":  "I am currently working as individual entrepreneur, <strong>consultant in Information Systems</strong> in these fields of application. I work also as <strong>developer</strong> in various open-source communities including GIS and R.",
+	"WORK_CURRENT_FAO": "In parallel of my company activity, I'm acting as <strong>International Consultant</strong> for the FAO of the United Nations - <a href='http://www.fao.org/fishery/en' target='_blank'>Fisheries and Aquaculture Department</a>.",
 	"WORK_MORE": "Learn more"
 }

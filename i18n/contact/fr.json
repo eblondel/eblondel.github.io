@@ -1,0 +1,10 @@
+{
+	"CONTACT_TITLE": "Me contacter",
+	"CONTACT_ADDRESS": "Adresse postale",
+	"CONTACT_PHONE": "Numéro de téléphone",
+	"CONTACT_EMAIL": "Courriel",
+	"CONTACT_COMPANY_TITLE": "Détails entreprise",
+	"CONTACT_COMPANY_STATUS": "Entreprise Individuelle (en nom propre)",
+	"CONTACT_COMPANY_TVA": "TVA non applicable (article 293 B du CGI)",
+	"CONTACT_COMPANY_REGISTRIES": "Dispensé d'immatriculation au Registre du commerce ou des sociétés (RCS) et au répertoire des métiers (RM)"
+}
