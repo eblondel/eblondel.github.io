@@ -27,12 +27,11 @@
 <script type="text/javascript" src="scripts/vendor/angularjs/angular-translate-loader-partial.js"></script>
 <script type="text/javascript" src="scripts/vendor/angularjs/angular-translate-interpolation-messageformat.js"></script>
 <script type="text/javascript" src="scripts/vendor/angularjs/ui-bootstrap.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.10.3/TweenMax.min.js"></script>
 
 <!-- Application -->
 <link rel="stylesheet" href="css/mainstyles.css">
 <script type="text/javascript" src="app/app.js"></script>
-<script type="text/javascript" src="app/modules/home/home.js"></script>
-<script type="text/javascript" src="app/modules/about/about.js"></script>
 <script type="text/javascript" src="app/modules/services/services.js"></script>
 <script type="text/javascript" src="app/modules/references/references.js"></script>
 <script type="text/javascript" src="app/modules/contact/contact.js"></script>
@@ -43,7 +42,7 @@
 
 	<div ng-include="'header.tpl.html'"></div>
 
-	<div ng-view class="container"></div>
+	<div ng-view class="container body-content" ng-class="{'extended-container': currentPath == '/contact' || currentPath.indexOf('/services') != -1}"></div>
 	
 	<div ng-include="'footer.tpl.html'"></div>
 	

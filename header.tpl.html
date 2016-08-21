@@ -1,21 +1,15 @@
 <nav class="navbar navbar-default header">
 	<div class="container-fluid">
-		<div class="navbar-header">
-			<a class="navbar-brand" href="" ng-click="goTo('home')"><span class="glyphicon glyphicon-home"></span></a>
-		</div>
 
-		<div class="collapse navbar-collapse"
-			id="bs-example-navbar-collapse-1">
-			
-			 
+		<div class="navbar-collapse" id="bs-example-navbar-collapse-1">
+						 
 			<ul class="nav navbar-nav">
-				<li><a href="" ng-click="goTo('services')" translate="SERVICES"></a></li>
-				<li><a href="" ng-click="goTo('references')" translate="REFERENCES"></a></li>
-				<li><a href="" ng-click="goTo('about')" translate="ABOUT"></a></li>
-				<li><a href="" ng-click="goTo('contact')" translate="CONTACT"></a></li>
+				<li class="category"><a href="" ng-click="goTo('services')" ng-class="{'page-selected': currentPath === '/services' || currentPath === '/'}" translate="SERVICES"></a></li>
+				<li class="category"><a href="" ng-click="goTo('references')" ng-class="{'page-selected': currentPath === '/references'}" translate="REFERENCES"></a></li>
+				<li class="category"><a href="" ng-click="goTo('contact')" ng-class="{'page-selected': currentPath === '/contact'}" translate="CONTACT"></a></li>
 			</ul>
 
-			<ul class="nav navbar-nav navbar-right">
+			<ul class="nav navbar-nav language-bar">
 				
 				<li class="dropdown"><a class="dropdown-toggle language-selector"
 					data-toggle="dropdown" role="button" , aria-expanded="false">{{'LANG'
@@ -33,8 +27,16 @@
 				</li>
 				<li><a href=""><img alt="flag" src="assets/flags/{{language}}.png"></a></li>
 			</ul>
-
-
-
+		</div>
+		
+		<div class="small-language-bar">
+			<ul>
+				<li><a ng-click="changeLanguage('en')" class="language-selector"><img class="flag selector" 
+						src="assets/flags/en.png" title="English"></a></li>
+				<li><a ng-click="changeLanguage('fr')" class="language-selector"><img class="flag selector" 
+						src="assets/flags/fr.png" title="Français"></a></li>
+				<li><a ng-click="changeLanguage('es')" class="language-selector"><img class="flag selector" 
+						src="assets/flags/es.png" title="Español"></a></li>
+			</ul>
 		</div>
 </nav>

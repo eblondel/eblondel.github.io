@@ -1,0 +1,37 @@
+<!-- Service details -->
+<div class="content">
+
+	<h3><b translate="{{service.category}}"></b> <small><strong translate="{{service.summary}}"></strong></small></h3>
+	<hr class="header-line">
+
+	<div class="row">
+		<div class="col-md-6">
+			<ul>
+				<li ng-repeat="item in service.items" translate="{{item}}"></li>
+			</ul>
+		</div>
+		<div class="col-sm-6 col-md-6">
+			<div ng-show="service.id != 'other'" class="container slider">
+				<img ng-repeat="slide in service.slides" class="slide slide-animation nonDraggableImage"
+					 ng-swipe-right="nextSlide()" ng-swipe-left="prevSlide()"
+					 ng-hide="!isCurrentSlideIndex($index)" ng-src="{{slide.source}}" style="width:inherit;">
+
+				<a class="arrow prev" href="" ng-click="nextSlide()"></a>
+				<a class="arrow next" href="" ng-click="prevSlide()"></a>
+				<nav class="nav nav-slider">
+					<div class="wrapper">
+						<ul class="dots">
+							<li class="dot" ng-repeat="slide in service.slides" ng-click="setCurrentSlideIndex($index);">
+								<a href="" ng-class="{'active':isCurrentSlideIndex($index)}"></a>
+							</li>
+						</ul>
+						<span class="slider-button glyphicon glyphicon-pause" ng-show="sliding" ng-click="stopSlider()"></span>
+						<span class="slider-button glyphicon glyphicon-play" ng-show="!sliding" ng-click="startSlider()"></span>
+					</div>
+					<p translate="{{service.slides[currentIndex].description}}"></p>
+				</nav>
+			</div>
+		</div>
+	</div>
+	
+</div>

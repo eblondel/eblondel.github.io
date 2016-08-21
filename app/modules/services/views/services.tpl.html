@@ -1,17 +1,28 @@
-<!-- List all services -->
 <div class="content">
+	
+	<!-- Presentation -->
+	<div class="intro">
+		<div class="profile"></div>
+		<h3>Emmanuel Blondel   <small><strong translate="WORK_POSITION"></strong></small></h3>
+		<p translate="WORK_BACKGROUND"></p>
+		<p translate="WORK_CURRENT_COMPANY"></p>
+		<p translate="WORK_CURRENT_FAO"></p>
+	</div>
 
+	<!-- All services -->
 	<h3><b translate="SERVICES"></b></h3>
 	<hr class="header-line">
 
-	<ul>
-		<li ng-repeat="service in services">
-			<b translate="{{service.category}}"></b>
-			<ul>
-				<li ng-repeat="item in service.items" translate="{{item}}"></li>
-			<ul>
-			<br>
-		</li>
-	</ul>
+	<div class="row">
+		<div ng-repeat="service in services" class="col-xs-6 col-sm-3 col-md-3 animate-repeat">
+			<div class="service" ng-click="goToService(service.id)">
+				<img ng-src="assets/services/{{service.id}}.png" alt="{{service.category}}" class="service-icon">
+				<div class="caption">
+					<h3 translate="{{service.category}}"></h3>
+					<p translate="{{service.summary}}"></p>
+				</div>
+			</div>
+		</div>
+	</div>
 	
 </div>

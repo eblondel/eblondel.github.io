@@ -8,14 +8,14 @@
 
 angular.module('home',['ngSanitize', 'pascalprecht.translate', 'ui.bootstrap']);
 angular.module('about',['ngSanitize', 'pascalprecht.translate']);
-angular.module('services',['ngSanitize', 'pascalprecht.translate']);
+angular.module('services',['ngSanitize', 'ngAnimate', 'pascalprecht.translate']);
 angular.module('references',['ngSanitize', 'pascalprecht.translate']);
 angular.module('contact', ['ngSanitize', 'pascalprecht.translate']);
 
 /**
  * Main application declaration
  */
-angular.module('MyWebsite', ['ngRoute', 'ngSanitize', 'pascalprecht.translate', 'ui.bootstrap',
+angular.module('MyWebsite', ['ngRoute', 'ngSanitize', 'ngAnimate', 'pascalprecht.translate', 'ui.bootstrap',
 							 'home', 'about', 'services', 'references', 'contact']);
 
 angular.module('MyWebsite')
@@ -46,24 +46,18 @@ angular.module('MyWebsite')
 	  
 	  //routes
       $routeProvider
-		//home
-        .when('/', {
-          templateUrl: './app/modules/home/views/home.tpl.html',
-          controller: 'HomeCtrl'
-        })
-        .when('/home', {
-          templateUrl: './app/modules/home/views/home.tpl.html',
-          controller: 'HomeCtrl'
-        })
-		//about
-        .when('/about', {
-          templateUrl: './app/modules/about/views/about.tpl.html',
-          controller: 'AboutCtrl'
-        })
 		//services
+        .when('/', {
+          templateUrl: './app/modules/services/views/services.tpl.html',
+          controller: 'ServicesCtrl'
+        })
         .when('/services', {
           templateUrl: './app/modules/services/views/services.tpl.html',
           controller: 'ServicesCtrl'
+        })
+		.when('/services/:id', {
+          templateUrl: './app/modules/services/views/service.tpl.html',
+          controller: 'GenericServiceCtrl'
         })
 		//references
 		.when('/references', {
@@ -78,10 +72,26 @@ angular.module('MyWebsite')
         .otherwise({
         	redirectTo: '/'
         });
-  }]);
+  }])
+  
+  
+.run(
+		[
+			'$rootScope',
+			'$location',
+			function($rootScope, $location) {
+
+				$rootScope.$on("$routeChangeStart", function(event, next, current) {
+					if(angular.isDefined(next.$$route)) {
+						$rootScope.currentPath = next.$$route.originalPath;
+						console.log($rootScope.currentPath);
+					}
+				});
+				
+			} ])
 
 
-angular.module("MyWebsite").controller('MainCtrl',
+.controller('MainCtrl',
 		[ '$translate', '$scope', '$location', function($translate, $scope, $location) {
 			
 			$scope.base = (document.domain.indexOf('localhost') != - 1)? 'http://localhost/eblondel' : 'eblondel.github.io';
@@ -104,9 +114,9 @@ angular.module("MyWebsite").controller('MainCtrl',
 				$location.path('/'+page);
 			}
 			
-		} ]);
+		} ])
 
-angular.module("MyWebsite").controller('FooterCtrl',
+.controller('FooterCtrl',
 		['$scope', function($scope) {
 			
 			$scope.year = new Date();
