@@ -10,13 +10,14 @@ angular.module('home',['ngSanitize', 'pascalprecht.translate', 'ui.bootstrap']);
 angular.module('about',['ngSanitize', 'pascalprecht.translate']);
 angular.module('services',['ngSanitize', 'ngAnimate', 'pascalprecht.translate']);
 angular.module('references',['ngSanitize', 'pascalprecht.translate']);
+angular.module('clients',['ngSanitize', 'pascalprecht.translate']);
 angular.module('contact', ['ngSanitize', 'pascalprecht.translate']);
 
 /**
  * Main application declaration
  */
-angular.module('MyWebsite', ['ngRoute', 'ngSanitize', 'ngAnimate', 'pascalprecht.translate', 'ui.bootstrap',
-							 'home', 'about', 'services', 'references', 'contact']);
+angular.module('MyWebsite', ['ngRoute', 'ngSanitize', 'ngAnimate', 'pascalprecht.translate', 'ui.bootstrap', 'ngTable',
+							 'home', 'about', 'services', 'references', 'clients', 'contact']);
 
 angular.module('MyWebsite')
 .config(
@@ -64,6 +65,11 @@ angular.module('MyWebsite')
           templateUrl: './app/modules/references/views/references.tpl.html',
           controller: 'ReferencesCtrl'
         })
+        //clients
+		.when('/clients', {
+          templateUrl: './app/modules/clients/views/clients.tpl.html',
+          controller: 'ClientsCtrl'
+        })
 		//contact
         .when('/contact', {
           templateUrl: './app/modules/contact/views/contact.tpl.html',
@@ -107,12 +113,21 @@ angular.module('MyWebsite')
 				$scope.linkedinLanguage = ($scope.language === 'en')? 'us' : $scope.language;
 				$scope.viadeoLanguage = $scope.language;
 			};
-			
-			
+
 			//location
 			$scope.goTo = function(page) {
 				$location.path('/'+page);
 			}
+            
+            if (!String.prototype.decodeHTML) {
+              String.prototype.decode = function () {
+                return this.replace(/&apos;/g, "'")
+                           .replace(/&quot;/g, '"')
+                           .replace(/&gt;/g, '>')
+                           .replace(/&lt;/g, '<')
+                           .replace(/&amp;/g, '&');
+              };
+            }
 			
 		} ])
 
