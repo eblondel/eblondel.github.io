@@ -47,6 +47,7 @@ angular.module('services').factory('Services',
 							slides: [
 								{source: "assets/services/si_fismis.png", description: "SERVICE_SI_SLIDE_WORKINGSYSTEM"},
 								{source: "assets/services/si_geoforms.png", description: "SERVICE_SI_SLIDE_GEOFORMS"},
+                                {source: "assets/services/si_mpa.png", description: "SERVICE_SI_SLIDE_WEBANALYSIS"},
 								{source: "assets/services/si_chimaera.png", description: "SERVICE_SI_SLIDE_WEBPORTAL"},
 								{source: "assets/services/si_webmapping.png", description: "SERVICE_SI_SLIDE_WEBMAPPING"}
 							]

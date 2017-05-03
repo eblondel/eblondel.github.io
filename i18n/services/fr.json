@@ -29,6 +29,7 @@
 	"SERVICE_SI_WEB": "Création de sites web",
 	"SERVICE_SI_SLIDE_WORKINGSYSTEM": "Outils thématiques de travail statistique",
 	"SERVICE_SI_SLIDE_GEOFORMS": "Formulaires thématiques avancés, avec géolocalisation",
+    "SERVICE_SI_SLIDE_WEBANALYSIS": "Outils d'analyse thématique",
 	"SERVICE_SI_SLIDE_WEBPORTAL": "Portails d'information et de recherche thématique",
 	"SERVICE_SI_SLIDE_WEBMAPPING": "Aplications web-cartographiques",
 	"SERVICE_OTHER": "Autres services",

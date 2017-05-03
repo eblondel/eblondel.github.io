@@ -30,6 +30,7 @@
 	"SERVICE_SI_SLIDE_WORKINGSYSTEM": "Thematic Statistical working systems",
 	"SERVICE_SI_SLIDE_GEOFORMS": "Advanced thematic web forms, with georeferencing",
 	"SERVICE_SI_SLIDE_WEBPORTAL": "Information and Thematic search portals",
+    "SERVICE_SI_SLIDE_WEBANALYSIS": "Thematic analysis tools",
 	"SERVICE_SI_SLIDE_WEBMAPPING": "GIS Web-mapping applications",
 	"SERVICE_OTHER": "Other services",
 	"SERVICE_OTHER_SUMMARY": "Data entry, IT Technical Support, Capacity Building and Translations",
