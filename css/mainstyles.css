@@ -171,13 +171,14 @@ body > .container {
 }
 
 .profile {
-	width:200px;
-	height:200px;
-	background-image: url(../assets/profiles/eblondel.jpg);
+	width:180px;
+	height:180px;
+	background-image: url(../assets/profiles/eblondel-new.jpg);
 	background-repeat: no-repeat;
 	background-position:right top;
 	float: right;
-	margin-left:10px;
+	margin-left:40px;
+	border-radius:90px;
 }
 
 .service {
