@@ -10,14 +10,14 @@ angular.module('home',['ngSanitize', 'pascalprecht.translate', 'ui.bootstrap']);
 angular.module('about',['ngSanitize', 'pascalprecht.translate']);
 angular.module('services',['ngSanitize', 'ngAnimate', 'pascalprecht.translate']);
 angular.module('references',['ngSanitize', 'pascalprecht.translate']);
-angular.module('clients',['ngSanitize', 'pascalprecht.translate']);
+angular.module('partners',['ngSanitize', 'pascalprecht.translate']);
 angular.module('contact', ['ngSanitize', 'pascalprecht.translate']);
 
 /**
  * Main application declaration
  */
 angular.module('MyWebsite', ['ngRoute', 'ngSanitize', 'ngAnimate', 'pascalprecht.translate', 'ui.bootstrap', 'ngTable',
-							 'home', 'about', 'services', 'references', 'clients', 'contact']);
+							 'home', 'about', 'services', 'references', 'partners', 'contact']);
 
 angular.module('MyWebsite')
 .config(
@@ -65,10 +65,10 @@ angular.module('MyWebsite')
           templateUrl: './app/modules/references/views/references.tpl.html',
           controller: 'ReferencesCtrl'
         })
-        //clients
-		.when('/clients', {
-          templateUrl: './app/modules/clients/views/clients.tpl.html',
-          controller: 'ClientsCtrl'
+        //partners
+		.when('/partners', {
+          templateUrl: './app/modules/partners/views/partners.tpl.html',
+          controller: 'PartnersCtrl'
         })
 		//contact
         .when('/contact', {

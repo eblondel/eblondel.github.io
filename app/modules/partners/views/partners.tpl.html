@@ -1,0 +1,22 @@
+<div>
+
+	<!-- Display clients logos -->
+    <h3><b>{{'CLIENTS'| translate:"{PLUR: 'true'}"}}</b></h3>
+	<hr class="header-line">
+	<ul>
+		<li class="animate-repeat" ng-repeat="client in clients" style="display:inline">
+			<a href="{{client.url}}" class="client" target="_blank"><img ng-src="assets/partners/{{client.id}}.png" alt="{{client.id}}" title="{{client.name}}" height="40"/></a>
+		</li>
+	</ul>
+	<br><br><br><br>
+	
+	<!-- Display collaborators logos -->
+    <h3><b>{{'COLLABORATORS'| translate:"{PLUR: 'true'}"}}</b></h3>
+	<hr class="header-line">
+	<ul>
+		<li class="animate-repeat" ng-repeat="collaborator in collaborators" style="display:inline">
+			<a href="{{collaborator.url}}" class="client" target="_blank"><img ng-src="assets/partners/{{collaborator.id}}.png" alt="{{collaborator.id}}" title="{{collaborator.name}}" height="40"/></a>
+		</li>
+	</ul>
+	
+</div>
