@@ -19,8 +19,15 @@
                 <td>{{reference.dateStart | date: 'MM/yyyy'}}</td>
                 <td>{{reference.dateEnd | date: 'MM/yyyy'}}</td>
                 <td>
-                    <a ng-href="{{reference.clientUrl}}" target="_blank"><b>{{reference.client}}</b></a>
-                    <span ng-if="reference.subcontractor" translate="SUBCONTRACT"></span> <span ng-if="reference.subcontractor"><a ng-href="{{reference.subcontractorUrl}}" target="_blank">{{reference.subcontractor}})</a></span>
+                    <a ng-href="{{reference.clientUrl}}" target="_blank">
+						<img ng-src="assets/clients/{{reference.clientId}}.png" alt="{{reference.clientId}}" title="{{reference.client}}" width="60" style="margin-bottom:5px;"/>
+					</a>
+                    <!--<span ng-if="reference.subcontractor" translate="SUBCONTRACT"></span>-->
+					<span ng-if="reference.subcontractor">
+						<a ng-href="{{reference.subcontractorUrl}}" target="_blank">
+							<img ng-src="assets/clients/{{reference.subcontractorId}}.png" alt="{{reference.subcontractorId}}" title="{{reference.subcontractor}}" width="60" style="margin-bottom:5px;"/>
+						</a>
+					</span>
                 </td>
                 <td><p translate="{{reference.id}}"></p></td>
              </tr>
