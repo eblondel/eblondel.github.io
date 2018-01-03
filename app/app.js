@@ -22,8 +22,10 @@ angular.module('MyWebsite', ['ngRoute', 'ngSanitize', 'ngAnimate', 'pascalprecht
 angular.module('MyWebsite')
 .config(
 		
-  ['$routeProvider', '$translateProvider', '$translatePartialLoaderProvider',
-    function($routeProvider, $translateProvider, $translatePartialLoaderProvider) {
+  ['$routeProvider', '$translateProvider', '$translatePartialLoaderProvider', '$provide',
+    function($routeProvider, $translateProvider, $translatePartialLoaderProvider, $provide) {
+	  
+	  $provide.value('$translateProvider', $translateProvider);
 	  
 	  //translation
 	  $translateProvider.useStaticFilesLoader();
@@ -103,6 +105,7 @@ angular.module('MyWebsite')
 			$scope.base = (document.domain.indexOf('localhost') != - 1)? 'http://localhost/eblondel' : 'eblondel.github.io';
 			
 			//language
+			$scope.supportedLanguages = ['en', 'fr', 'es'];
 			$scope.language = $translate.preferredLanguage();
 			$scope.linkedinLanguage = ($scope.language === 'en')? 'us' : $scope.language;
 			$scope.viadeoLanguage = $scope.language;

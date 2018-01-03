@@ -6,13 +6,5 @@
     "REF_DATE_END": "End date",
     "REF_DESCRIPTION": "Service description",
 	"PAGING_PREVIOUS": "Previous",
-	"PAGING_NEXT": "Next",
-	"REF_FAO_PSA_FIP": "GIS expertises, data management, tools development & map production in several projects: FIGIS, EU projects (D4Science, iMarine), Vulnerable Marine Ecosystems (VME) database, SmartFish Chimaera portal and FIRMS",
-	"REF_FAO_PSA_ESS": "Development of a GIS tool with the R software to produce thematic statistical maps for the FAO Statistical yearbooks (starting from the 2012 edition). The software is exploited at report generation time using LaTeX tools. See <a href=\"http://www.fao.org/economic/ess/ess-publications/ess-yearbook/en\" target=\"_blank\">http://www.fao.org/economic/ess/ess-publications/ess-yearbook/en</a> ",
-	"REF_UMANIS_2014_S3E": "Integrating coastal indicators for the EC Water Framework Directive in the SEEE information system​: R expertise (Technical conception & implementation). Audit of the existing SEEE information system & recommendations for its exploitation with coastal data & resulting indicators",
-	"REF_UMANIS_2015_R": "R expertise for the Ifremer Dyneco/Vigies service: Optimization of codes, Automation & Standardization of processings including statistical analyses such as Dynamic Linear Models",
-    "REF_IFREMER_2016_DCSMM_FOND": "Development of a R standard and generic library (DCSMM.D10) to convert datasets in <a href=\"http://quadrige.eaufrance.fr/\" target=\"_blank\">Quadrige2</a> exchange format (QUADRILABO). Application to marine litter macro waste data from on-board data entry sofware (Allegro / TUTTI). <em>Work carried out as part of the Marine Strategy Framework Directive.</em>",
-    "REF_IFREMER_2016_DCSMM_FLOT": "Development of a conversion interactive tool (Microsoft Access - VBA) to convert datasets from the MEGASCOPE database in QUADRILABO exchange format for integration in <a href=\"http://quadrige.eaufrance.fr/\" target=\"_blank\">Quadrige2</a>. Application to Floating wastes data. <em>Work carried out as part of the Marine Strategy Framework Directive.</em>",
-    "REF_IFREMER_2017_DCSMM_FOND": "Improving development of DCSMM data integration R library (DCSMM.D10) for integrating recovery and historical data series of marine litter macro waste data in <a href=\"http://quadrige.eaufrance.fr/\" target=\"_blank\">Quadrige2</a>. <em>Work carried out as part of the Marine Strategy Framework Directive.</em>",
-    "REF_IFREMER_2017_DCSMM_FLOT": "Improving development of DSCSMM data integration R library (DCSMM.D10) for integrating heterogenous datasets on marine floating wastes in <a href=\"http://quadrige.eaufrance.fr/\" target=\"_blank\">Quadrige2</a>. <em>Work carried out as part of the Marine Strategy Framework Directive.</em>"
+	"PAGING_NEXT": "Next"
 }

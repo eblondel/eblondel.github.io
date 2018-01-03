@@ -97,8 +97,8 @@ angular.module('references')
 
 //ReferencesCtrl (controller)
 angular.module('references').controller('ReferencesCtrl',
-		[ '$scope', '$translate', '$timeout', '$filter', 'References', 'ngTableParams',
-          function($scope, $translate, $timeout, $filter, References, ngTableParams) {
+		[ '$scope', '$translateProvider', '$translate', '$timeout', '$filter', 'References', 'ngTableParams',
+          function($scope, $translateProvider, $translate, $timeout, $filter, References, ngTableParams) {
 			
 			//references
             $scope.referencesTable = new ngTableParams({
@@ -110,10 +110,25 @@ angular.module('references').controller('ReferencesCtrl',
                     
                     References.getReferences().then(function(result){
                         var data = result;
+						
+						//load dynamic i18n vocabulary from references
+						var currentLanguage = $translate.use();
+						for(var i=0;i<$scope.supportedLanguages.length;i++){
+							var lang = $scope.supportedLanguages[i];
+							$translate.use(lang);
+							var vocabulary = $translateProvider.translations(lang);
+							if(typeof vocabulary == "undefined") vocabulary = new Object();
+							for(var j=0;j<data.length;j++){
+								vocabulary[data[j].id] = data[j][lang];
+							}
+							$translateProvider.translations(lang, vocabulary);
+						}
+						$translate.use(currentLanguage);
+						
+						//post-process data for display
                         data.reverse();
                         data = params.filter() ? $filter('filter')(data, params.filter()) : data;
                         data = params.sorting() ? $filter('orderBy')(data, params.orderBy()) : data;
-                        
                         params.total(data.length);
                         data = data.slice((params.page() - 1) * params.count(), params.page() * params.count());
                         $defer.resolve(data);

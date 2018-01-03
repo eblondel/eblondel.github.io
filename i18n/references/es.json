@@ -6,14 +6,5 @@
     "REF_DATE_END": "Fin",
     "REF_DESCRIPTION": "Descripción del servicio",
 	"PAGING_PREVIOUS": "Previa",
-	"PAGING_NEXT": "Siguiente",
-	"REF_FAO_PSA_FIP": "Evaluaciones SIG, manejo de datos, desarrollo de herramientas y producción de mapas en varias proyectos: FIGIS, Proyectos EU (D4-Science, iMarine), Base de datos Ecosistemas Marinos Vulnerables (VME-db), Portal de datos SmartFish Chimaera y FIRMS",
-	"REF_FAO_PSA_ESS": "Desarrollo de una herramienta SIG con el languaje R para producir mapas temáticos para los libros estadísticos de la FAO (utilizado desde la edición 2012). El programa R está utilizado adentro de una herramienta de presentación de informes basados sobre la plataforma LaTeX. Ver <a href=\"http://www.fao.org/economic/ess/ess-publications/ess-yearbook/en\" target=\"_blank\">http://www.fao.org/economic/ess/ess-publications/ess-yearbook/en</a>",
-	"REF_UMANIS_2014_S3E": "Integración de indicadores costeros para la Directiva sobre el agua en el Sistema de Información SEEE: Evaluación R (concepción técnica e implementación. Auditoría del sistema de información SEEE actual y recomendaciones para su explotación con los datos costeros y indicadores resultantes.",
-	"REF_UMANIS_2015_R": "Evaluación R para el servicio Ifremer Dyneco/Vigies: Optimización de códigos, Automatización y estandardización de tratamientos de datos incluyendo análisis estadísticos como los Modelos Dinámicos Lineares",
-    "REF_IFREMER_2016_DCSMM_FOND": "Concepción de un package R estándar y genérico (DCSMM.D10) para convertir juegos de datos estructurados en formato de intercambio <a href=\"http://quadrige.eaufrance.fr\" target=\"_blank\">Quadrige2</a> (QUADRILABO). Aplicación a datos de macro desechos de fondo colectados a bordo de buques (Allegro / TUTTI). <em>Trabajo llevado a cabo como parte de la Directiva marco sobre la estrategia marina.</em>",
-    "REF_IFREMER_2016_DCSMM_FLOT": "Desarrollo de una herramienta interactiva de conversión (Microsoft Access - VBA) para convertir juegos de datos de la base de datos MEGASCOPE en formato de intercambio QUADRILABO para su integración en <a href=\"http://quadrige.eaufrance.fr\" target=\"_blank\">Quadrige2</a>. Aplicación a los datos de desechos flotantes. <em>Trabajo llevado a cabo como parte de la Directiva marco sobre la estrategia marina.</em>",
-    "REF_IFREMER_2017_DCSMM_FOND": "Desarrollo mejorativo del package R de integration de datos de de desechos DCSMM (DCSMM.D10) para la integración en <a href=\"http://quadrige.eaufrance.fr\" target=\"_blank\">Quadrige2</a> de datos de recuperación y series históricas sobre los desechos de fondo. <em>Trabajo llevado a cabo como parte de la Directiva marco sobre la estrategia marina.</em>",
-    "REF_IFREMER_2017_DCSMM_FLOT": "Desarrollo mejorativo del package R de integration de datos de de desechos DCSMM (DCSMM.D10) para la integración en <a href=\"http://quadrige.eaufrance.fr\" target=\"_blank\">Quadrige2</a> de juegos de datos heterogéneos sobre los desechos marinos flotantes. <em>Trabajo llevado a cabo como parte de la Directiva marco sobre la estrategia marina.</em>"
-    
+	"PAGING_NEXT": "Siguiente"
 }
