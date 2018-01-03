@@ -84,8 +84,8 @@ angular.module('references')
                         for(var j=0;j<keys.length;j++){
                             if(typeof record[keys[j]] == "string") record[keys[j]] = record[keys[j]].decode();
                         }
-                        
-                        result.push(record);
+                        record.display = record.display == "true"
+                        if(record.display) result.push(record);
                     }
                     return result;
                 }
