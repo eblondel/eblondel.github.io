@@ -1,7 +1,7 @@
 <div>
 
 	<!-- Display clients logos -->
-    <h3><b>{{'CLIENTS'| translate:"{PLUR: 'true'}"}}</b></h3>
+    <!--<h3><b>{{'CLIENTS'| translate:"{PLUR: 'true'}"}}</b></h3>
 	<hr class="header-line">
 	<ul>
 		<li class="animate-repeat" ng-repeat="client in clients" style="display:inline">
@@ -9,13 +9,12 @@
 		</li>
 	</ul>
 	<br><br><br><br>
+	-->
 	
 	<!-- Display collaborators logos -->
-    <h3><b>{{'COLLABORATORS'| translate:"{PLUR: 'true'}"}}</b></h3>
-	<hr class="header-line">
 	<ul>
 		<li class="animate-repeat" ng-repeat="collaborator in collaborators" style="display:inline">
-			<a href="{{collaborator.url}}" class="client" target="_blank"><img ng-src="assets/partners/{{collaborator.id}}.png" alt="{{collaborator.id}}" title="{{collaborator.name}}" height="40"/></a>
+			<a href="{{collaborator.url}}" class="client" target="_blank"><img ng-src="assets/partners/{{collaborator.id}}.png" alt="{{collaborator.id}}" title="{{collaborator.name}}" height="60" style="margin:4px;"/></a>
 		</li>
 	</ul>
 	
