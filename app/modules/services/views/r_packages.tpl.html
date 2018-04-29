@@ -1,0 +1,27 @@
+<div class="content">
+
+	<div class="row">
+		<ul>
+			<li translate="SERVICE_R_PACKAGES"></li>
+			<li translate="SERVICE_R_PACKAGES_OS"></li>
+		</ul>
+	</div>
+
+	<div class="row">
+		<div ng-repeat="pkg in packages" class="col-xs-6 col-sm-3 col-md-3 animate-repeat">
+			<div class="pkg" style="height:225px;">
+				<div class="caption">
+					<h3>{{pkg.id}}<h3>
+					<h4><small><b translate="{{pkg.id}}_title"></b></small></h4>
+					<hr style="margin:10px 0px;border-top:3px solid #eee;">
+					<p style="margin:0px;font-size:90% !important;" translate="{{pkg.id}}_description"></p>
+					<a ng-href="{{pkg.github}}" target="_blank" class="social-profile">
+						<img src="assets/profiles/github.png" alt="{{pkg.id}} on Github" title="{{pkg.id}} on Github" height="28" width="28">
+					</a>
+					<a ng-if="pkg.cran" ng-href="{{pkg.cran}}" target="_blank" class="social-profile" style="font-size:80%;"><b>CRAN</b></a>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+</div>

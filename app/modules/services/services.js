@@ -20,7 +20,12 @@ angular.module('services').factory('Services',
 							id: 'gis',
 							category: 'SERVICE_GIS',
 							summary: 'SERVICE_GIS_SUMMARY',
-							items: ['SERVICE_GIS_DESKTOP', 'SERVICE_GIS_SDI', 'SERVICE_GIS_MAPS', 'SERVICE_GIS_OPENSOURCE'],
+							items: [
+								{id: 'SERVICE_GIS_DESKTOP'},
+								{id: 'SERVICE_GIS_SDI'},
+								{id: 'SERVICE_GIS_MAPS'},
+								{id: 'SERVICE_GIS_OPENSOURCE'}
+							],
 							slides: [
 								{source: "assets/services/gis_management.png", description: "SERVICE_GIS_SLIDE_MANAGEMENT"},
 								{source: "assets/services/gis_modelling.png", description: "SERVICE_GIS_SLIDE_MODELLING"},
@@ -31,7 +36,14 @@ angular.module('services').factory('Services',
 							id: 'r',
 							category: 'SERVICE_R',
 							summary: 'SERVICE_R_SUMMARY',
-							items: ['SERVICE_R_PROD', 'SERVICE_R_WEBDATA', 'SERVICE_R_PROCESS', 'SERVICE_R_OPENSOURCE', 'SERVICE_R_WEB', 'SERVICE_R_RND'],
+							items: [
+								{id: 'SERVICE_R_PROD'},
+								{id: 'SERVICE_R_WEBDATA'},
+								{id: 'SERVICE_R_PROCESS'},
+								{id: 'SERVICE_R_PACKAGES', more: 'services/r/packages'},
+								{id: 'SERVICE_R_WEB'},
+								{id: 'SERVICE_R_RND'}
+							],
 							slides: [
 								{source: "assets/services/r_packages.png", description: "SERVICE_R_SLIDE_PACKAGES"},
 								{source: "assets/services/r_mapping.png", description: "SERVICE_R_SLIDE_MAPPING"},
@@ -43,7 +55,11 @@ angular.module('services').factory('Services',
 							id: 'si',
 							category: 'SERVICE_SI',
 							summary: 'SERVICE_SI_SUMMARY',
-							items: ['SERVICE_SI_AUDIT', 'SERVICE_SI_DEV',  'SERVICE_SI_GIS'],
+							items: [
+								{id: 'SERVICE_SI_AUDIT'},
+								{id: 'SERVICE_SI_DEV'},
+								{id: 'SERVICE_SI_GIS'}
+							],
 							slides: [
 								{source: "assets/services/si_fismis.png", description: "SERVICE_SI_SLIDE_WORKINGSYSTEM"},
 								{source: "assets/services/si_geoforms.png", description: "SERVICE_SI_SLIDE_GEOFORMS"},
@@ -56,7 +72,12 @@ angular.module('services').factory('Services',
 							id: 'other',
 							category: 'SERVICE_OTHER',
 							summary: 'SERVICE_OTHER_SUMMARY',
-							items: ['SERVICE_OTHER_DATA_ENTRY', 'SERVICE_OTHER_SUPPORT', 'SERVICE_OTHER_CONFERENCES', 'SERVICE_OTHER_TRANSLATE'],
+							items: [
+								{id: 'SERVICE_OTHER_DATA_ENTRY'},
+								{id: 'SERVICE_OTHER_SUPPORT'},
+								{id: 'SERVICE_OTHER_CONFERENCES'},
+								{id: 'SERVICE_OTHER_TRANSLATE'}
+							],
 							slides: []
 						}
 					];
@@ -148,6 +169,111 @@ angular.module('services').controller('GenericServiceCtrl',
 			});
 			
 			$scope.startSlider();
+
+		} ]);
+		
+
+//References service
+angular.module('services')
+       .service('Packages',
+		['$q', '$http',
+		 function($q, $http){
+		
+			service = {
+                
+				/**
+				 * Get the list of R Packages
+				 * @returns
+				 */
+                 getPackages: function(){
+                    var this_ = this;
+					var deferred = $q.defer();
+					
+					$http.get('resources/packages.ods',
+							{
+								headers: {
+									'Cache-Control' : 'no-cache'
+								},
+                                responseType: 'arraybuffer',
+							})
+					.success (function(response){
+						var data = this_.processWorkbook(response);
+                        var result = this_.processPackages(data);
+						deferred.resolve(result);
+					})
+					.error(function(error){
+						deferred.reject();
+					});
+					
+					return deferred.promise;
+				},
+                
+                 /**
+                 * Function to process workbook (ODS file)
+                 * @param response
+                 */
+                processWorkbook : function(response) {
+                    var out;
+                    var arraybuffer = response;
+                    var data = new Uint8Array(arraybuffer);
+                    var arr = new Array();
+                    for(var i = 0; i != data.length; ++i) arr[i] = String.fromCharCode(data[i]);
+                    var bstr = arr.join("");
+                    
+                    var workbook = XLSX.read(bstr, {type:"binary"});
+                    out = XLSX.utils.sheet_to_json(workbook.Sheets.Packages)
+                    return out;
+                },
+                
+                /**
+                 * Function to post-process the list of packages for display
+                 * @param data
+                 */
+                processPackages : function(data) {
+                    var currentYear = new Date().getFullYear();						
+                    var result = new Array();
+                    for(var i=0;i<data.length;i++){
+                        var record = data[i];
+                        var keys = Object.keys(record);
+                        for(var j=0;j<keys.length;j++){
+                            if(typeof record[keys[j]] == "string") record[keys[j]] = record[keys[j]].decode();
+                        }
+                        record.display = record.display == "true"
+                        if(record.display) result.push(record);
+                    }
+                    return result;
+                }
+				
+            }
+            
+            return service;
+        }]);
+
+		
+angular.module('services').controller('RPackagesCtrl',
+		[ '$scope', '$translateProvider', '$translate', '$interval', '$routeParams', 'Services', 'Packages', function($scope, $translateProvider, $translate, $interval, $routeParams, Services, Packages) {
+			
+			Packages.getPackages().then(function(result){
+				var data = result;
+				
+				//load dynamic i18n vocabulary from references
+				var currentLanguage = $translate.use();
+				for(var i=0;i<$scope.supportedLanguages.length;i++){
+					var lang = $scope.supportedLanguages[i];
+					$translate.use(lang);
+					var vocabulary = $translateProvider.translations(lang);
+					if(typeof vocabulary == "undefined") vocabulary = new Object();
+					for(var j=0;j<data.length;j++){
+						vocabulary[data[j].id+'_title'] = data[j]['title_'+lang];
+						vocabulary[data[j].id+'_description'] = data[j]['description_'+lang];
+					}
+					$translateProvider.translations(lang, vocabulary);
+				}
+				$translate.use(currentLanguage);
+				
+				//post-process data for display
+				$scope.packages = data;
+			});
 
 		} ]);
 		

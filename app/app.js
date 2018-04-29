@@ -62,6 +62,10 @@ angular.module('MyWebsite')
           templateUrl: './app/modules/services/views/service.tpl.html',
           controller: 'GenericServiceCtrl'
         })
+		.when('/services/r/packages', {
+          templateUrl: './app/modules/services/views/r_packages.tpl.html',
+          controller: 'RPackagesCtrl'
+        })
 		//references
 		.when('/references', {
           templateUrl: './app/modules/references/views/references.tpl.html',

@@ -7,7 +7,9 @@
 	<div class="row">
 		<div class="col-md-6">
 			<ul>
-				<li ng-repeat="item in service.items" translate="{{item}}"></li>
+				<li ng-repeat="item in service.items">
+				<span translate="{{item.id}}"></span> 
+				<a ng-if="item.more" ng-click="goTo(item.more)" translate="SERVICE_MORE" style="cursor:pointer;"></a></li>
 			</ul>
 		</div>
 		<div class="col-sm-6 col-md-6">

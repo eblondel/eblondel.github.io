@@ -12,7 +12,8 @@
 	"SERVICE_R": "Expertise R",
 	"SERVICE_R_SUMMARY": "Développement de solutions standard R, Intégration au sein de Systèmes d'Information statistique et scientifique",
 	"SERVICE_R_PROD": "Normalisation, Automatisation & Industrialisation de traitements de données (Harmonisation, Traitement, Analyse et Visualisation de données)",
-	"SERVICE_R_OPENSOURCE": "Développement, Publication et Maintenance de librairies standardisées R (solutions open-source ou entreprise)",
+	"SERVICE_R_PACKAGES": "Développement, Publication et Maintenance de librairies standardisées R (solutions open-source ou entreprise)",
+	"SERVICE_R_PACKAGES_OS": "Liste des librairies R open-source",
 	"SERVICE_R_WEB": "Intégration de l'environnement R dans des Systèmes d'Information notamment web (portails d'information, outils de traitement, gestion et visualisation statistique)",
 	"SERVICE_R_WEBDATA": "Solutions d'accès / récupération de données scientifiques à partir du web, leur traitement et analyse.",
 	"SERVICE_R_PROCESS": "Développement d'algorithmes et indicateurs statistiques dans les domaines de l'<em>Agromomie</em>, l'<em>Environnement</em>, l'<em>Halieutique</em> et les <em>Sciences Aquatiques</em>.",
@@ -37,5 +38,6 @@
 	"SERVICE_OTHER_DATA_ENTRY": "Saisie informatique de données scientifiques",
 	"SERVICE_OTHER_SUPPORT": "Assistance technique informatique/internet",
 	"SERVICE_OTHER_CONFERENCES": "Conférences et formations techniques",
-	"SERVICE_OTHER_TRANSLATE": "Traduction de documents techniques"
+	"SERVICE_OTHER_TRANSLATE": "Traduction de documents techniques",
+	"SERVICE_MORE": "En savoir plus"
 }

@@ -11,8 +11,9 @@
 	"SERVICE_GIS_SLIDE_MAPS": "Automated Map production & Reporting",
 	"SERVICE_R": "R expertise",
 	"SERVICE_R_SUMMARY": "Development of R standard solutions, Integration within statistical and scientific Information Systems",
-	"SERVICE_R_PROD": "Standardization, Automation and Industrialization of data processings (Data Harmonization, Processing, Analysis and Visualization)",
-	"SERVICE_R_OPENSOURCE": "Development, Publication and Maintenance of standard R packages (open-source or enterprise solutions)",
+	"SERVICE_R_PROD": "Standardization, Automation and Industrialization of data processings (Data Harmonization, Processing, Analysis and Visualization).",
+	"SERVICE_R_PACKAGES": "Development, Publication and Maintenance of standard R packages (open-source or enterprise solutions)",
+	"SERVICE_R_PACKAGES_OS": "List of R open-source packages",
 	"SERVICE_R_WEB": "Integration of the R environment in web information systems (data portals, statistical processing and visualization tools)",
 	"SERVICE_R_WEBDATA": "Solutions for scientific data accessing and retrieving from web, processing and analysis.",
 	"SERVICE_R_PROCESS": "Development of statistical algorithms and indicators in the field of <em>Agronomy</em>, <em>Environment</em>, <em>Fisheries</em> & <em>Aquatic Sciences</em>.",
@@ -37,5 +38,6 @@
 	"SERVICE_OTHER_DATA_ENTRY": "Digitalization of scientific data",
 	"SERVICE_OTHER_SUPPORT": "Technical assistance for computing and internet",
 	"SERVICE_OTHER_CONFERENCES": "Conferences and capacity building",
-	"SERVICE_OTHER_TRANSLATE": "Translation of technical documents (French, English, Spanish)"
+	"SERVICE_OTHER_TRANSLATE": "Translation of technical documents (French, English, Spanish)",
+	"SERVICE_MORE": "More information"
 }

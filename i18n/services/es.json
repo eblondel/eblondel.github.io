@@ -12,7 +12,8 @@
 	"SERVICE_R": "Evaluación R",
 	"SERVICE_R_SUMMARY": "Desarollo de soluciones estándar R, Integración en Sistemas de Información estadística y científica.",
 	"SERVICE_R_PROD": "Estandardización, Automatización y Industrialización de tratamientos de datos (Armonización, Tratamiento, Análisis y Visualización de datos)",
-	"SERVICE_R_OPENSOURCE": "Desarrollo, Publicación y Mantenimiento de packages estandardizados R (soluciones open-source o empresas)",
+	"SERVICE_R_PACKAGES": "Desarrollo, Publicación y Mantenimiento de packages estandardizados R (soluciones open-source o empresas)",
+	"SERVICE_R_PACKAGES_OS": "Lista de packages R open-source",
 	"SERVICE_R_WEB": "Integración de la plataforma R en Sistemas de Información espacialemnte web (portales de informacion, herramientas de tratamiento, manejo y visualización estadística",
 	"SERVICE_R_WEBDATA": "Soluciones de accesso/recuperación de datos científicos del web, su tratamiento e análisis.",
 	"SERVICE_R_PROCESS": "Implementación de algoritmos y indicadores estadísticos en los dominios de <em>Agronomía</em>, <em>Medio Ambiente</em>, <em>Pesquerías</em> y <em>Ciencias Acuáticas</em>",
@@ -37,5 +38,6 @@
 	"SERVICE_OTHER_DATA_ENTRY": "Entrada informática de datos científicos",
 	"SERVICE_OTHER_SUPPORT": "Asistencia técnica en informática / internet",
 	"SERVICE_OTHER_CONFERENCES": "Conferencias y cursos técnicos",
-	"SERVICE_OTHER_TRANSLATE": "Traducción de documentos técnicos"
+	"SERVICE_OTHER_TRANSLATE": "Traducción de documentos técnicos",
+	"SERVICE_MORE": "Más información"
 }
