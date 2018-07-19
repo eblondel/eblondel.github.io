@@ -15,10 +15,10 @@
 					<h4><small><b translate="{{pkg.id}}_title"></b></small></h4>
 					<hr style="margin:10px 0px;border-top:3px solid #eee;">
 					<p style="margin:0px;font-size:90% !important;" translate="{{pkg.id}}_description"></p>
-					<a ng-href="{{pkg.github}}" target="_blank" class="social-profile">
+					<a ng-href="{{pkg.github_url}}" target="_blank" class="social-profile">
 						<img src="assets/profiles/github.png" alt="{{pkg.id}} on Github" title="{{pkg.id}} on Github" height="28" width="28">
 					</a>
-					<a ng-if="pkg.cran" ng-href="{{pkg.cran}}" target="_blank" class="social-profile" style="font-size:80%;"><b>CRAN</b></a>
+					<a ng-if="pkg.cran_url" ng-href="{{pkg.cran_url}}" target="_blank" class="social-profile" style="font-size:80%;"><b>CRAN</b></a>
 				</div>
 			</div>
 		</div>
