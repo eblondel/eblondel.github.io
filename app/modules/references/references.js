@@ -103,7 +103,7 @@ angular.module('references').controller('ReferencesCtrl',
 			//references
             $scope.referencesTable = new ngTableParams({
                 page: 1,
-                count: 6
+                count: 5
             }, {
                 total: 0,
                 getData: function($defer, params) {

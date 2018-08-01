@@ -4,7 +4,7 @@
 	"SUBCONTRACT": "(subcontracting with",
     "REF_DATE_START": "Start date",
     "REF_DATE_END": "End date",
-    "REF_DESCRIPTION": "Service description",
+    "REF_DESCRIPTION": "Description",
 	"PAGING_PREVIOUS": "Previous",
 	"PAGING_NEXT": "Next"
 }

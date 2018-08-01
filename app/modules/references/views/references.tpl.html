@@ -4,39 +4,43 @@
 	<h3><b translate="REFERENCES"></b></h3>
 	<hr class="header-line">
     
-    <table ng-table="referencesTable" template-pagination="custom/references-pager"
-           class="table table-condensed" style="font-size:85%;">
-           <thead>
-              <tr>
-                <td translate="REF_DATE_START" style="font-weight:bold;"></td>
-                <td translate="REF_DATE_END" style="font-weight:bold;"></td>
-                <td style="font-weight:bold;">{{'CLIENTS'|translate:"{PLUR:'false'}"}}</td>
-                <td translate="REF_DESCRIPTION" style="font-weight:bold;"></td>
-              </tr>
-           </thead>
-           <tbody>
-             <tr ng-repeat="reference in $data">
-                <td>{{reference.dateStart | date: 'MM/yyyy'}}</td>
-                <td>{{reference.dateEnd | date: 'MM/yyyy'}}</td>
-                <td ng-if="!reference.subcontractor" style="width:140px">
-					<a ng-href="{{reference.clientUrl}}" target="_blank" style="float:left;">
-						<img ng-src="assets/partners/{{reference.clientId}}.png" alt="{{reference.clientId}}" title="{{reference.client}}" height="30" style="margin:2px;min-width:60px;"/>
-					</a>
-				</td>
-				<td ng-if="reference.subcontractor" style="width:140px">
-                    <a ng-href="{{reference.clientUrl}}" target="_blank" style="float:left;">
-						<img ng-src="assets/partners/{{reference.clientId}}.png" alt="{{reference.clientId}}" title="{{reference.client}}" height="30" width="60" style="margin:2px"/>
-					</a>
-					<span>
-						<a ng-href="{{reference.subcontractorUrl}}" target="_blank">
-							<img ng-src="assets/partners/{{reference.subcontractorId}}.png" alt="{{reference.subcontractorId}}" title="{{reference.subcontractor}}" height="30" width="60" style="margin:2px"/>
+	<div>
+	
+		<table ng-table="referencesTable" template-pagination="custom/references-pager"
+			   class="table table-condensed" style="font-size:85%;">
+			   <thead style="display:block;">
+				  <tr>
+					<td translate="REF_DATE_START" style="width:52px;font-weight:bold;"></td>
+					<td translate="REF_DATE_END" style="width:52px;font-weight:bold;"></td>
+					<td style="width:235px;font-weight:bold;">{{'COLLABORATORS'|translate:"{PLUR:'true'}"}}</td>
+					<td translate="REF_DESCRIPTION" style="font-weight:bold;"></td>
+				  </tr>
+			   </thead>
+			   <tbody style="display: block;max-height:500px !important;overflow:auto;">
+				 <tr ng-repeat="reference in $data">
+					<td>{{reference.dateStart | date: 'MM/yyyy'}}</td>
+					<td>{{reference.dateEnd | date: 'MM/yyyy'}}</td>
+					<td ng-if="!reference.subcontractor" style="width:140px">
+						<a ng-href="{{reference.clientUrl}}" target="_blank" style="float:left;">
+							<img ng-src="assets/partners/{{reference.clientId}}.png" alt="{{reference.clientId}}" title="{{reference.client}}" height="40" width="auto" style="margin:2px;min-width:60px;"/>
 						</a>
-					</span>
-                </td>
-                <td><p translate="{{reference.id}}"></p></td>
-             </tr>
-        </tbody>
-    </table>
+					</td>
+					<td ng-if="reference.subcontractor" style="width:140px">
+						<a ng-href="{{reference.clientUrl}}" target="_blank" style="float:left;">
+							<img ng-src="assets/partners/{{reference.clientId}}.png" alt="{{reference.clientId}}" title="{{reference.client}}" height="40" width="auto" style="margin:2px;max-width:160px;"/>
+						</a>
+						<span>
+							<a ng-href="{{reference.subcontractorUrl}}" target="_blank">
+								<img ng-src="assets/partners/{{reference.subcontractorId}}.png" alt="{{reference.subcontractorId}}" title="{{reference.subcontractor}}" height="40" width="auto" style="margin:2px;max-width:160px;"/>
+							</a>
+						</span>
+					</td>
+					<td><p translate="{{reference.id}}"></p></td>
+				 </tr>
+			</tbody>
+		</table>
+		
+	</div>
     
     <script type="text/ng-template" id="custom/references-pager">
 		<ul class="pager ng-cloak">
@@ -46,14 +50,14 @@
 				<a ng-switch-when="prev" ng-click="params.page(page.number)" href="">&laquo; <span translate="PAGING_PREVIOUS"></span></a>
 				<a ng-switch-when="next" ng-click="params.page(page.number)" href=""><span translate="PAGING_NEXT"></span> &raquo;</a>
 			</li>
-			<!--<li>
+			<li>
 				<div class="btn-group">
 					<button type="button" ng-class="{'active':params.count() == 5}" ng-click="params.count(5)" class="btn btn-default">5</button>
 					<button type="button" ng-class="{'active':params.count() == 10}" ng-click="params.count(10)" class="btn btn-default">10</button>
 					<button type="button" ng-class="{'active':params.count() == 25}" ng-click="params.count(25)" class="btn btn-default">25</button>
 					<button type="button" ng-class="{'active':params.count() == 50}" ng-click="params.count(50)" class="btn btn-default">50</button>
 				</div>
-			</li>-->
+			</li>
 		</ul>
 	</script>
 
