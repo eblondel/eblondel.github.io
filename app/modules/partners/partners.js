@@ -12,8 +12,11 @@ angular.module('partners').controller('PartnersCtrl',
 			$scope.collaborators = [];
 			$timeout(function(){
 				$scope.collaborators = [
-					{id: 'fao', name: 'UN-FAO', url: 'http://www.fao.org'},
 					{id: 'ifremer', name: 'Ifremer', url: 'http://wwz.ifremer.fr/'},
+					{id: 'linuxfoundation', name: 'The Linux Foundation', url: 'https://www.linuxfoundation.org/'},
+					{id: 'rconsortium', name: 'R Consortium', url: 'https://www.r-consortium.org/'},
+					{id: 'fao', name: 'UN-FAO', url: 'http://www.fao.org'},
+					{id: 'gridgeneva', name: 'GRID-Geneva', url: 'http://www.grid.unep.ch'},
 					{id: 'grida', name: 'GRID-ARENDAL', url: 'https://www.grida.no/'},
 					{id: 'ird', name: 'IRD', url: 'https://www.ird.fr/'},
 					{id: 'ird-marbec', name: 'IRD MARBEC Unit', url: 'http://www.umr-marbec.fr/fr/'},
