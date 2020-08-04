@@ -20,12 +20,12 @@
 				 <tr ng-repeat="reference in $data">
 					<td>{{reference.dateStart | date: 'MM/yyyy'}}</td>
 					<td>{{reference.dateEnd | date: 'MM/yyyy'}}</td>
-					<td ng-if="!reference.subcontractor" style="width:140px">
+					<td ng-if="!reference.subcontractor" style="width:175px">
 						<a ng-href="{{reference.clientUrl}}" target="_blank" style="float:left;">
 							<img ng-src="assets/partners/{{reference.clientId}}.png" alt="{{reference.clientId}}" title="{{reference.client}}" height="40" width="auto" style="margin:2px;min-width:60px;max-width:160px;"/>
 						</a>
 					</td>
-					<td ng-if="reference.subcontractor" style="width:140px">
+					<td ng-if="reference.subcontractor" style="width:175px">
 						<a ng-href="{{reference.clientUrl}}" target="_blank" style="float:left;">
 							<img ng-src="assets/partners/{{reference.clientId}}.png" alt="{{reference.clientId}}" title="{{reference.client}}" height="40" width="auto" style="margin:2px;max-width:160px;"/>
 						</a>
