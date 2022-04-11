@@ -238,7 +238,8 @@ angular.module('services')
                         for(var j=0;j<keys.length;j++){
                             if(typeof record[keys[j]] == "string") record[keys[j]] = record[keys[j]].decode();
                         }
-                        record.display = record.display == "true"
+                        record.display = record.display == "true";
+						record.github_page = record.github_page == "true";
                         if(record.display) result.push(record);
                     }
                     return result;

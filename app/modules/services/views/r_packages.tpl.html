@@ -19,6 +19,7 @@
 						<img src="assets/profiles/github.png" alt="{{pkg.id}} on Github" title="{{pkg.id}} on Github" height="28" width="28">
 					</a>
 					<a ng-if="pkg.cran_url" ng-href="{{pkg.cran_url}}" target="_blank" class="social-profile" style="font-size:80%;"><b>CRAN</b></a>
+					<a ng-if="pkg.github_page" ng-href="/{{pkg.id}}/index.html" style="font-size:80%;"><b>WWW</b></a>
 				</div>
 			</div>
 		</div>
